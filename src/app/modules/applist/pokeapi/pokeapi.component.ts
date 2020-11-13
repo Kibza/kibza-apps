@@ -14,22 +14,24 @@ export class PokeapiComponent implements OnInit {
   constructor(public rest: PokeapiService) { }
 
   ngOnInit(): void {
-    this.getPokemons('');
-    this.getPokemon(1);
+    this.getPokemons();
     M.AutoInit();
   }
 
-  getPokemons(x: string): any {
+  getPokemons(): any {
     this.products = [];
-    this.rest.getPokemons(x).subscribe((data: {}) => {
+    this.rest.getPokemons().subscribe((data: {}) => {
       this.products = data;
       this.pokemons = this.products.results;
+      console.log(this.pokemons);
     });
-  }
-  getPokemon(id: number): any {
-    this.rest.getPokemon(id).subscribe((data: {}) => {
-      this.pokemon = data;
-    });
+    /*
+        getPokemon(id: number): any {
+          this.rest.getPokemon(id).subscribe((data: {}) => {
+            this.pokemon = data;
+          });
+        }
+        */
   }
 
 }

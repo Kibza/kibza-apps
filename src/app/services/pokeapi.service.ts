@@ -20,8 +20,8 @@ export class PokeapiService {
     return body || {};
   }
 
-  getPokemons(x: string): any {
-    return this.http.get(endpoint + 'pokemon' + x).pipe(
+  getPokemons(): any {
+    return this.http.get(endpoint + 'pokemon').pipe(
       map(this.extractData));
   }
 
