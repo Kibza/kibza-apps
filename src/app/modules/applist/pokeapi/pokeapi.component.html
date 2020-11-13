@@ -1,0 +1,54 @@
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <h1 class="header center">Pokemon Finder</h1>
+      <div class="row center">
+        <h5 class="header col s12 bold">Made with: <a href="https://swapi.dev/documentation" target="blank">POKEAPI</a>
+          the Pokemon API.</h5>
+      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fuga laborum cumque ex nemo et, ut minima iusto
+        iure dolorum sunt beatae, magnam optio quam vero dicta officia inventore quaerat?</p>
+    </div>
+    <div class="row center">
+      <a routerLink="../../home" id="download-button" class="btn-large waves-effect waves-light blue"> <i
+          class="material-icons left">undo</i> Go back</a>
+    </div>
+  </div>
+  <div class="parallax"><img src="../../../../assets/images/pokemon.jpg" alt="Unsplashed background img"></div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="section">
+        <div class="col s12 m4" *ngFor="let k of pokemons">
+          <div class="card hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/office.jpg">
+            </div>
+            <div class="card-content">
+              <p class="card-title truncate activator">{{k.name | titlecase}}</p>
+              <span class="activator grey-text text-darken-4 ">{{k.name}}<i class="material-icons right">more_vert</i>
+                <p>{{k.name}} </p>
+                <p>{{k.name}} </p>
+                <p>{{k.name}} </p>
+                <p>{{k.name}} </p>
+                <p>{{k.name}} </p>
+              </span>
+            </div>
+            <div class="card-reveal teal white-text">
+              <span class="card-title">{{k.name}}<i class="material-icons right">close</i></span>
+              <ul class="collection">
+                <li class="collection-item teal darken-2">Status -<span class="light">{{k.name}}</span></li>
+                <li class="collection-item teal darken-2">Species -<span class="light">{{k.name}}</span></li>
+                <li class="collection-item teal darken-2">Type -<span class="light">{{k.name}}</span></li>
+                <li class="collection-item teal darken-2">Gender -<span class="light">{{k.name}}</span></li>
+                <li class="collection-item teal darken-2">Origin Name -<span class="light">{{k.name}}</span></li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
