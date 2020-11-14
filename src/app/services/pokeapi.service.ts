@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
-const endpoint = 'https://pokeapi.co/api/v2/'; const httpOptions = {
+const endpoint = '';
+const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
   })
@@ -16,17 +17,17 @@ export class PokeapiService {
   constructor(private http: HttpClient) { }
 
   private extractData(res: any) {
-    let body = res;
+    const body = res;
     return body || {};
   }
 
   getPokemons(): any {
-    return this.http.get(endpoint + 'pokemon').pipe(
+    return this.http.get(endpoint + 'https://pokeapi.co/api/v2/pokemon').pipe(
       map(this.extractData));
   }
 
-  getPokemon(id: number): any {
-    return this.http.get(endpoint + 'pokemon/' + id).pipe(
+  getUrl(url: string): any {
+    return this.http.get(endpoint + url).pipe(
       map(this.extractData));
   }
 

@@ -20,18 +20,14 @@
   <div class="section">
     <div class="row">
       <div class="section">
-        <div class="col s12 m4" *ngFor="let k of pokemons">
+        <div class="col s12 m4" *ngFor="let k of pokemons; let i=index">
           <div class="card hoverable">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/office.jpg">
+              <img class="activator" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{i+1}}.png">
             </div>
             <div class="card-content">
               <p class="card-title truncate activator">{{k.name | titlecase}}</p>
               <span class="activator grey-text text-darken-4 ">{{k.name}}<i class="material-icons right">more_vert</i>
-                <p>{{k.name}} </p>
-                <p>{{k.name}} </p>
-                <p>{{k.name}} </p>
-                <p>{{k.name}} </p>
                 <p>{{k.name}} </p>
               </span>
             </div>

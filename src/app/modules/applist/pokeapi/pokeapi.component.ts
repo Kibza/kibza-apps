@@ -15,6 +15,7 @@ export class PokeapiComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPokemons();
+    // this.catchEmAll();
     M.AutoInit();
   }
 
@@ -22,16 +23,15 @@ export class PokeapiComponent implements OnInit {
     this.products = [];
     this.rest.getPokemons().subscribe((data: {}) => {
       this.products = data;
+      console.log(this.products.results[0].url);
       this.pokemons = this.products.results;
-      console.log(this.pokemons);
     });
-    /*
-        getPokemon(id: number): any {
-          this.rest.getPokemon(id).subscribe((data: {}) => {
-            this.pokemon = data;
-          });
-        }
-        */
+  }
+
+  catchEmAll(): any {
+    this.rest.getUrl('https://pokeapi.co/api/v2/pokemon/1/').subscribe((data: {}) => {
+      this.pokemon = data;
+    });
   }
 
 }
